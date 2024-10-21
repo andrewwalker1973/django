@@ -1,8 +1,5 @@
 pipeline {
     agent none
-    docker:latest
-    docker-commons:latest
-    docker-workflow:latest
     stages {
         stage('Back-end') {
             agent {
