@@ -1,7 +1,7 @@
 #!groovy
 pipeline {
     agent {
-        docker { image 'hysnsec/safety:latest'
+        docker { image 'node:alpine3.10'
                args '--entrypoint='
                }
     }
@@ -9,7 +9,9 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'cd django'
-                sh 'safety check -r requirements.txt '
+                sh 'npm install'
+                sh 'install -g retire'
+                sh 'retire --outputformat json --outputpath retirejs-report.json'
         }
     }
 }
