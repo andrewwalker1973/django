@@ -1,12 +1,12 @@
 #!groovy
 pipeline {
     agent {
-        docker { image 'node:22.11.0-alpine3.20' }
+        docker { image 'hysnsec/safety:latest' }
     }
     stages {
         stage('Test') {
             steps {
-                sh 'node --version'
+                sh 'ls -l'
             }
         }
     }
