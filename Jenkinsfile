@@ -12,6 +12,7 @@ pipeline {
                 sh 'pwd'
                 sh 'npm install'
                 sh 'npm install retire'
+                sh 'ls -la'
                 sh 'retire --outputformat json --outputpath retirejs-report.json'
         }
     }
