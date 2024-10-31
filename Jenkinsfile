@@ -9,8 +9,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'cd django'
-                sh 'safety -h'
-            }
+                sh 'safety check'
         }
     }
 }
