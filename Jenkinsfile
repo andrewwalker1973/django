@@ -12,8 +12,7 @@ pipeline {
                 sh 'pwd'
                 sh 'npm install'
                 sh 'npm install retire'
-                sh 'find / -name retire'
-                sh '/var/jenkins_home/workspace/test1_main/node_modules/retire --outputformat json --outputpath retirejs-report.json'
+                sh './node_modules/retire --outputformat json --outputpath retirejs-report.json'
         }
     }
 }
