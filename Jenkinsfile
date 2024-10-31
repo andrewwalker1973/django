@@ -1,7 +1,9 @@
 #!groovy
 pipeline {
     agent {
-        docker { image 'hysnsec/safety:latest' }
+        docker { image 'hysnsec/safety:latest'
+               args '--entrypoint='
+               }
     }
     stages {
         stage('Test') {
