@@ -9,7 +9,7 @@ pipeline {
      }       
   }       
   steps {
-       sh 'safety check'
+       sh 'safety'
        }
      }
    }
