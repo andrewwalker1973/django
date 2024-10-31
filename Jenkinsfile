@@ -9,7 +9,8 @@ pipeline {
      }       
   }       
   steps {
-       sh 'safety'
+       sh 'pwd'
+       sh 'ls -la'
        }
      }
    }
