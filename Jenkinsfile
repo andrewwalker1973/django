@@ -8,7 +8,8 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'ls -l'
+                sh 'cd django'
+                sh 'safety -h'
             }
         }
     }
