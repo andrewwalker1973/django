@@ -9,7 +9,7 @@ pipeline {
      }       
   }       
   steps {
-       sh 'docker run --rm -v ${PWD}:/src hysnsec/safety check'
+       sh 'safety check'
        }
      }
    }
