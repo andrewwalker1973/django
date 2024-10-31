@@ -1,20 +1,16 @@
-#!groovy
+Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent {
-        docker { image 'node:alpine3.10'
-               args '--entrypoint='
-               }
-    }
+    agent none
     stages {
-        stage('Test') {
+        stage('JS vulnerability check') {
+            agent {
+                docker 'gruebel/retirejs:latest'
+                args '--entrypoint ""'
+            }
             steps {
-                sh 'cd django'
-                sh 'pwd'
-                sh 'npm install'
-                sh 'npm install retire'
-                sh 'ls -laR ./node_modules/retire'
-                sh './node_modules/retire --outputformat json --outputpath retirejs-report.json'
+                sh 'retire'
+            }
         }
     }
 }
-}
+
