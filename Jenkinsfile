@@ -9,6 +9,7 @@ pipeline {
      }       
   }       
   steps {
+       sh 'cd django'
        sh 'pwd'
        sh 'ls -la'
        }
