@@ -5,11 +5,11 @@ pipeline {
     stage('Maven Install') {
     agent {         
        docker {          
-         image 'maven:3.5.0'         
+         image 'hysnsec/safety'         
      }       
   }       
   steps {
-       sh 'ls -la'
+       sh 'docker run --rm -v ${PWD}:/src hysnsec/safety check'
        }
      }
    }
