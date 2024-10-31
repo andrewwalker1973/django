@@ -1,18 +1,13 @@
 #!groovy
 pipeline {
-    agent none
-   stages {   
-    stage('Maven Install') {
-    agent {         
-       docker {          
-         image 'hysnsec/safety'         
-     }       
-  }       
-  steps {
-       sh 'cd django'
-       sh 'pwd'
-       sh 'ls -la'
-       }
-     }
-   }
- }
+    agent {
+        docker { image 'node:22.11.0-alpine3.20' }
+    }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+            }
+        }
+    }
+}
