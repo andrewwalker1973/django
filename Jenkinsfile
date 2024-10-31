@@ -9,6 +9,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'cd django'
+                sh 'pwd'
                 sh 'npm install'
                 sh 'npm install --local -g retire'
                 sh 'retire --outputformat json --outputpath retirejs-report.json'
