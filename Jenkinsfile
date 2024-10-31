@@ -11,7 +11,7 @@ pipeline {
                 sh 'cd django'
                 sh 'pwd'
                 sh 'npm install'
-                sh 'npm install --local -g retire'
+                sh 'npm install retire'
                 sh 'retire --outputformat json --outputpath retirejs-report.json'
         }
     }
