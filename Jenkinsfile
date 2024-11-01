@@ -1,5 +1,4 @@
 pipeline {
-    agent any
     stages {
         stage('JS vulnerability check') {
             agent {
