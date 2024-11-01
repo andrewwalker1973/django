@@ -7,7 +7,7 @@ pipeline {
             steps {
                 sh '`id`'
                 sh 'node --version'
-                sh 'npm install -g retire'
+                sh 'sudo npm install -g retire'
                 sh 'retire --path `pwd` --outputformat json --outputpath /{JENKINS HOME DIRECTORY}/reports/retirejs-report --exitwith 0'
                 }
         }
