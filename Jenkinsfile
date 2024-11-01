@@ -6,7 +6,9 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'node --version'
-            }
+                sh 'npm install retire'
+                sh 'retire --path `pwd` --outputformat json --outputpath /{JENKINS HOME DIRECTORY}/reports/retirejs-report --exitwith 0'
+                }
         }
     }
 }
